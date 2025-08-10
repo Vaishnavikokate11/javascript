@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    //anather way
+
+    const sayVaishu = function(){
+        console.log("vaishu");
+        
+
+    }
+    setTimeout(sayVaishu, 2000)
+
+    //change the html 
+
+    const changetext = function(){
+        document.querySelector("h1").innerHTML = "Best Youtube Channel"
+    }
+   const changeRef= setTimeout(changetext, 2000)
+
+   const button = document.querySelector("#stop").addEventListener('click', function(){
+    clearTimeout(changeRef);
+    console.log("Stopped");
+    
+   })
+    // setTimeout(function(){
+    //     console.log("vaishu");
+        
+    // }, 2000);
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing images</h2>
+    <ul id="images">
+        <li><img width="200px" id="mountain" 
+        src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=0&k=20&c=z8_rWaI8x4zApNEEG9DnWlGXyDIXe-OmsAyQ5fGPVV8="  alt="mountain"></li>
+        <li> <img width="200px" id="river" 
+        src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D" alt=" "></li>
+        <li> <img width="200px" id="boat" 
+        src="https://tinypng.com/static/images/boat.png" alt=""></li>
+        <li> <img width="200px" id="bird" 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUsbmTZu_uMrmJ0z--CrG-o1UIXytu1OCizQ&s" alt=""></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('river').onclick = function () {
+    //     alert('River click');
+        
+    // }
+
+    //best approch
+
+    // document.getElementById('river').addEventListener('click', function(e){
+    //     console.log(e);
+        
+    // } ,false)
+    // //type of different click event
+    // //timestamp, defaultPrevented
+    // //target, eoElement, curenttarget
+    // //clientX clientY shifKey
+    // //screeX screeny altKey 
+    // //eventProogration - event bubling
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("Clicked Inside image");
+        
+    // } ,false)
+
+    // document.getElementById('river').addEventListener('click', function(e){
+    //     console.log("click on river");
+    //     e.stopPropagation()
+        
+    // } ,false)
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google click");
+        
+        
+    // } ,false)
+
+    //when i click on image then all image remove
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e);
+       // console.log(e.target.parentNode);
+       console.log(e.target.tagName);
+       if(e.target.tagName === 'IMG'){
+           console.log(e.target.id);
+            let removeit = e.target.parentNode
+            removeit.remove()
+        
+       }
+       
+        
+        
+    } ,false)
+
+</script>
+</html>
