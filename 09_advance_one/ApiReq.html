@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+</head>
+<body style="background-color: #212121;">
+    <div class="photo">
+        <img src="https://avatars.githubusercontent.com/u/11613311?v=4">
+        <button id="btn">Get followers</button>
+    </div>
+    
+</body>
+<script>
+    const reqUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', reqUrl )
+    xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+    if(xhr.readyState === 4){
+        const data = JSON.parse(this.responseText)
+        console.log(data.followers);
+        
+        
+    }
+    }
+    xhr.send()
+
+    document.querySelector('#btn').addEventListener('click', function(){
+        const reqUrl = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', reqUrl )
+        xhr.readystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText)
+                console.log(data.followers);
+                const followers = data.followers
+                const followersUrl = 'https://api/github.com/users/hiteshchoudary/followers'
+                const xhr2 = new XMLHttpRequest()
+                xhr2.open('GET', followersUrl)
+                xhr2.readystatechange = function(){
+                    
+                }
+                
+            }
+            
+        }
+    })
+    
+    
+</script>
+</html>
